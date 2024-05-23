@@ -44,7 +44,7 @@ final class RMQDeserializationSchemaWrapper<OUT> implements RMQDeserializationSc
             byte[] body,
             RMQCollector<OUT> collector)
             throws IOException {
-        collector.collect(schema.deserialize(body));
+        schema.deserialize(body, collector);    // collector.collect(schema.deserialize(body));
     }
 
     @Override
